@@ -10,6 +10,6 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - SECRET_KEY=test
-      - DEBUG=True
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
       
