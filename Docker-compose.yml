@@ -1,0 +1,15 @@
+version: '29.7.2'
+services:
+  backend:
+    image: django:5.2.17
+    build: .
+    container_name: django
+    command: python3 manage.py runserver 0.0.0.0:5000
+    volumes:
+      - ./core:/app
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=test
+      - DEBUG=True
+      
