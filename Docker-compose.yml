@@ -4,11 +4,11 @@ services:
     image: django:5.2.17
     build: .
     container_name: django
-    command: python3 manage.py runserver 0.0.0.0:5000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - ./core:/app
     ports:
-      - "5000:5000"
+      - "8000:8000"
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
