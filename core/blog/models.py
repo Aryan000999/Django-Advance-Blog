@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from accounts.models import User
 # Create your models here.
 class Post(models.Model):
@@ -10,9 +11,8 @@ class Post(models.Model):
     title=models.CharField(max_length=255)
     content=models.TextField()
     status=models.BooleanField()
-    categoty=models.ForeignKey("Category",on_delete=models.SET_NULL,null=True)
-
-    pubished_date=models.DateTimeField()
+    category=models.ForeignKey("Category",on_delete=models.SET_NULL,null=True)
+    pubished_date = models.DateTimeField(default=timezone.now)
     created_date=models.DateTimeField(auto_now_add=True)
     updated_date=models.DateTimeField(auto_now=True)
 
